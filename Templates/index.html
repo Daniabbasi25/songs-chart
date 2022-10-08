@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js"
+      integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css"
+      integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="container d-flex mt-5"
+      style="
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <img
+        src="{% static '/images/IBA-1.png' %}"
+        alt=""
+        srcset=""
+        style="align-self: center; width: 8rem"
+      />
+      <p class="col-lg-6 text-center mt-3">
+        <b>
+          IBA OFFICIAL TOP 50 INDEPENDENT AIRPLAY CHART<br />
+          Compiled from "REAL" Airplay not popular opinion<br />
+          Publish Date 10.8.22.
+        </b>
+      </p>
+      <table class="table table-striped mt-5">
+        <thead style="background-color: #000; color: #fff">
+          <tr>
+            <th scope="col">TW &nbsp;LW</th>
+
+            <th scope="col">Artist</th>
+            <th scope="col">Song Title</th>
+            <th scope="col">Label</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in songs %}
+          <tr>
+            <th scope="row col-2">{{s.TW}} &nbsp; {{s.LW}}</th>
+
+            <td>{{s.Artist}}</td>
+            <td>{{s.SongTitle}}</td>
+            <td>{{s.Label}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p><b> Powered By Warm World Airplay Radio Monitor </b></p>
+    </div>
+  </body>
+</html>
